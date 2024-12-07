@@ -1,0 +1,55 @@
+import = ["~/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+# 是否启用配置热更新
+live_config_reload = true
+
+# `env` 下的所有键值对将会被添加为环境变量
+[env]
+TERM = "xterm-256color"
+
+
+[window]
+#decorations = "buttonless"
+dynamic_padding = false
+opacity = 0.9
+
+# 窗口标题 
+title = "Alacritty"
+
+
+[window.padding]
+x = 25
+y = 20
+
+[font]
+size = 17.0
+
+[font.bold]
+family = "SFMono Nerd Font"
+style = "Heavy"
+
+[font.bold_italic]
+family = "SFMono Nerd Font"
+style = "Heavy Italic"
+
+[font.italic]
+family = "SFMono Nerd Font"
+style = "Medium Italic"
+
+[font.normal]
+family = "SFMono Nerd Font"
+style = "Medium"
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Alt"
+action = "ToggleFullscreen"
+
+[[keyboard.bindings]]
+key = "Q"
+mods = "Alt"
+action = "Hide"
+
+[[keyboard.bindings]]
+key = "M"
+mods = "Command"
+action = "ToggleSimpleFullscreen"
