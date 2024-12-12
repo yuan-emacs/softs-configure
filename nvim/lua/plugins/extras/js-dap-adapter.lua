@@ -18,12 +18,12 @@ return {
         })
 
         for _, language in ipairs({ "typescript", "javascript", "svelte", "vue", "json" }) do
-            require("dap").configurations[language] = { 
+            require("dap").configurations[language] = {
                 {
                     type = "pwa-node",
                     request = "launch",
                     name = "debugger-ts",
-                    runtimeExecutable = "tsx",
+                    runtimeExecutable = "ts-node",
                     sourceMaps = true,
                     -- launch current file
                     program = "${file}",
@@ -31,7 +31,7 @@ return {
                         "${workspaceFolder}/**",
                         "!**/node_modules/**",
                     },
-                    skipFiles = { "${workspaceFolder}/node_modules/**/*.js" }, 
+                    skipFiles = { "${workspaceFolder}/node_modules/**/*.js" },
                     cwd = "${workspaceFolder}",
                 },
                 {
@@ -46,8 +46,8 @@ return {
                         "--auto-open-devtools-for-tabs",
                     },
                     -- skip files from vite's hmr
-                    skipFiles = { "${workspaceFolder}/node_modules/**/*.js" }, 
-                    runtimeExecutable = "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary"
+                    skipFiles = { "${workspaceFolder}/node_modules/**/*.js" },
+                    runtimeExecutable = "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary",
                     --runtimeExecutable = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
                 },
                 {
