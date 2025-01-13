@@ -25,6 +25,12 @@ opt.guifont = { "SFMono Nerd Font", ":h18" }
 opt.list = true
 opt.listchars = { space = "." }
 
+-- Set conceal level to 0
+vim.o.conceallevel = 0
+vim.g.autoformat = false
+vim.b.autoformat = false
+vim.g.lsp_eslint_enable = "no"
+
 -- windows 中设置shell 为pwsh7
 -- opt.shell = "pwsh"
 -- opt.shellcmdflag = "-command"

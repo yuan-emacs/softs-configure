@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
+import = ["~/.config/alacritty/catppuccin/catppuccin-latte.toml"]
 # 是否启用配置热更新
 live_config_reload = true
 
@@ -10,11 +10,10 @@ TERM = "xterm-256color"
 [window]
 #decorations = "buttonless"
 dynamic_padding = false
-opacity = 0.9
+opacity = 1
 
-# 窗口标题 
-title = "Alacritty"
-
+# 窗口标题
+title = "你最棒!"
 
 [window.padding]
 x = 25
@@ -53,3 +52,8 @@ action = "Hide"
 key = "M"
 mods = "Command"
 action = "ToggleSimpleFullscreen"
+
+# [[keyboard.bindings]]
+# key = "Return"
+# mods = "Shift"
+# action = "ReceiveChar"

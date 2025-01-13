@@ -16,7 +16,7 @@ return {
     opts = {
       restriction_mode = "block", -- block or hint
       -- default values is disabled the arrow keys
-      disabled_keys = { ["<Left>"] = {}, ["<Right>"] = {} },
+      disabled_keys = { ["<Left>"] = {}, ["<Right>"] = {}, ["<Up>"] = {}, ["<Down>"] = {} },
       -- Allow j k but restrict gj gk
       restricted_keys = {
         ["j"] = {},
