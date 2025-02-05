@@ -53,7 +53,12 @@ key = "M"
 mods = "Command"
 action = "ToggleSimpleFullscreen"
 
-# [[keyboard.bindings]]
-# key = "Return"
-# mods = "Shift"
-# action = "ReceiveChar"
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+action = "ReceiveChar"
+
+[shell]
+# program = "/bin/fish"
+program = "/bin/zsh"
+args = ["--login"]

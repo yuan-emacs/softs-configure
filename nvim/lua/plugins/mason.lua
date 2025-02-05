@@ -23,7 +23,7 @@ return {
         "lua-language-server",
         -- "shellcheck",
         -- "shfmt",
-        "php-debug-adapter",
+        -- "php-debug-adapter",
         -- "intelephense",
       },
     },

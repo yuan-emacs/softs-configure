@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 -- 对lazyvim 中默认的配置进行覆盖；
+vim.g.lazyvim_picker = "telescope"
 
 local opt = vim.opt
 -- local g = vim.g
@@ -16,7 +17,7 @@ opt.spell = false
 opt.wrap = true
 
 -- 禁用相对行号
-opt.relativenumber = true
+opt.relativenumber = false
 
 -- 目前公Neovide 支持，即给 Neovide设置字体
 opt.guifont = { "SFMono Nerd Font", ":h18" }
@@ -30,6 +31,7 @@ vim.o.conceallevel = 0
 vim.g.autoformat = false
 vim.b.autoformat = false
 vim.g.lsp_eslint_enable = "no"
+vim.g.lsp_eslint_enable = false
 
 -- windows 中设置shell 为pwsh7
 -- opt.shell = "pwsh"

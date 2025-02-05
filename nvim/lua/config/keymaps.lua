@@ -8,12 +8,18 @@ local originMap = vim.keymap.set
 
 -- 复用 opt 参数
 local opt = { noremap = true, silent = true }
-upmap("n", "<leader><space>", { desc = "find files (root dir)" })
--- upmap("n","<leader>ww",opt)
+upmap("n", "<leader><space>")
+-- upmap("n", "<leader>ww")
+
+originMap("n", "<leader>ww", "<cmd>vsplit<cr>", { desc = "vsplit" })
+originMap("n", "<leader>dj", "<cmd>Sexplore<cr>", { desc = "show current dir", silent=true, noremap=true })
+originMap("n", "<leader><space>", "<c-w>o", { remap = true  })
+
+-- upmap("n","<space>ww", opt)
 
 -- 取消一些emacs中常用的快捷键, 后面会重新设置
-upmap("i", "<C-f>", opt)
-upmap("i", "<C-b>", opt)
+-- upmap("i", "<C-f>", opt)
+-- upmap("i", "<C-b>", opt)
 
 map("n", "gcd", "o<esc>vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "add comment below" })
 map("n", "gcu", "o<esc>vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "add comment above" })
@@ -26,7 +32,8 @@ map("v", "p", '"_dP', opt)
 map("i", "<C-a>", "<ESC>I", opt)
 map("i", "<C-e>", "<ESC>A", opt)
 
-map("n", "<C-k>", "zz", opt)
+map("n", "<A-l>", "zz", opt)
+map("n", "<A-k>", "v$x", opt)
 -- map({"n", "v", "i"}, "<A-x>", "<cmd>", opt)
 
 originMap("n", "<C-a>", "0", opt)

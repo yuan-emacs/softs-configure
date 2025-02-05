@@ -1,0 +1,24 @@
+return {
+    "julienvincent/nvim-paredit",
+    -- keys = {
+    --     {
+    --         "<leader>@",
+    --         function()
+    --             require("nvim-paredit").unwrap.unwrap_form_under_cursor()
+    --         end,
+    --         desc = "Splice sexp",
+    --         mode = { "n", "v" },
+    --     },
+    --     {
+    --         "<leader>bb",
+    --         function()
+    --             require("nvim-paredit").api.barf_backwards()
+    --         end,
+    --         desc = "barf backwards",
+    --         mode = { "n", "v" },
+    --     },
+    -- },
+    config = function()
+        require("nvim-paredit").setup({})
+    end,
+}

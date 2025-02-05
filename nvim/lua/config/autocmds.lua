@@ -17,3 +17,18 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.b.autoformat = false
   end,
 })
+
+-- 确保在LSP 配置完成之前关闭virtual_text
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function()
+    vim.diagnostic.config({
+      virtual_text = false, -- Disable virtual text
+      underline = false
+    })
+  end,
+})
+
+-- vim.diagnostic.config({
+--   virtual_text = false,
+--   underline = false
+-- })

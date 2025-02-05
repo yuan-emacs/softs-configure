@@ -119,6 +119,7 @@ return {
         require("nvim-dap-virtual-text").setup({
             commented = true,
         })
+    
         require("dapui").setup({
             expand_lines = true,
             icons = { expanded = "", collapsed = "", circular = "" },
