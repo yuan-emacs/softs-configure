@@ -24,7 +24,7 @@ require("lazy").setup({
         { import = "lazyvim.plugins.extras.linting.eslint" },
         { import = "lazyvim.plugins.extras.formatting.prettier" },
         { import = "plugins.extras.js-dap-adapter" },
-        -- { import = "plugins.extras.python-dap-adapter" },
+        { import = "plugins.extras.python-dap-adapter" },
         { import = "plugins.extras.npm" },
         { import = "plugins" },
     },

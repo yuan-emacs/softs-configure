@@ -1,26 +1,33 @@
 return {
     "mxsdev/nvim-dap-vscode-js",
-    ft = { "svelte", "typescript", "javascript", "vue", "json" },
+    ft = { "svelte", "typescript", "javascript", "vue" },
     dependencies = {
         "mfussenegger/nvim-dap",
         -- build debugger from source
         {
             "microsoft/vscode-js-debug",
             version = "1.x",
-            build = "npm i && npm run compile vsDebugServerBundle && rm -rf out && mv dist out",
+            build = "npm install && npx gulp vsDebugServerBundle && rm -rf out && mv dist out",
         },
     },
     config = function()
         require("dap-vscode-js").setup({
             debugger_path = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug",
-            -- debugger_path = "/Users/yuan/.local/share/nvim/lazy/vscode-js-debug",
-            adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
+            -- debugger_path = "~/.local/share/nvim/lazy/vscode-js-debug", 
+            -- debugger_cmd = { 'js-debug-adapter' },
+            -- node_path = 'node',
+            adapters = { "node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
         })
+        
+        local dap_status_ok, dap = pcall(require, "dap")
+        if not dap_status_ok then
+            return
+        end
 
-        for _, language in ipairs({ "typescript", "javascript", "svelte", "vue", "json" }) do
+        for _, language in ipairs({ "typescript", "javascript", "svelte", "vue" }) do
             require("dap").configurations[language] = {
                 {
-                    type = "pwa-node",
+                    type = "node",
                     request = "launch",
                     name = "debugger-ts",
                     runtimeExecutable = "ts-node",
@@ -52,7 +59,7 @@ return {
                 },
                 {
                     -- use nvim-dap-vscode-js's pwa-node debug adapter
-                    type = "pwa-node",
+                    type = "node",
                     -- attach to an already running node process with --inspect flag
                     -- default port: 9222
                     request = "attach",
@@ -75,7 +82,7 @@ return {
                 -- only if language is javascript, offer this debug action
                 language == "javascript"
                         and {
-                            type = "pwa-node",
+                            type = "node",
                             request = "launch",
                             name = "node",
                             -- launch current file

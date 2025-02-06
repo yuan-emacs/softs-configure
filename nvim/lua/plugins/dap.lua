@@ -6,7 +6,7 @@ local function configure()
 
     local dap_breakpoint = {
         breakpoint = {
-            text = "",
+            text = "🔴",
             texthl = "LspDiagnosticsSignError",
             linehl = "",
             numhl = "",
@@ -36,7 +36,8 @@ return {
         "rcarriga/nvim-dap-ui",
         "nvim-neotest/nvim-nio",
         "theHamsta/nvim-dap-virtual-text",
-    },
+    }, 
+    lazy = false,
     keys = {
         -- normal mode is default
         {
